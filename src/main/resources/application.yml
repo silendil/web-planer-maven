@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:8082}
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5433/todo_app_db}
+    username: ${JDBC_DATABASE_USERNAME:postgres}
+    password: ${JDBC_DATABASE_PASSWORD:example}
+  jpa:
+    database: POSTGRESQL
+    properties:
+      jdbc:
+        lob:
+          non_contextual_creation: true
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
